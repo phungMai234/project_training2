@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .device-type {
     margin: 20px;
 }
@@ -8,11 +9,22 @@
 }
 
 .box-custom {
+=======
+.device-type{
+    margin: 20px;
+}
+.chart{
+    display: flex;
+    align-items: center;
+}
+.box-custom{
+>>>>>>> 3192a90e76a73f76f3377cd371d1f1101668d4e5
     height: 5px;
     width: 10px;
     border-radius: 5px;
     margin-right: 10px;
 }
+<<<<<<< HEAD
 
 .box-custom.android {
     background-color: #00cc99;
@@ -23,6 +35,15 @@
 }
 
 .title-pie {
+=======
+.box-custom.android{
+    background-color: #00cc99;
+}
+.box-custom.ios{
+    background-color: #8c1aff;
+}
+.title-pie{
+>>>>>>> 3192a90e76a73f76f3377cd371d1f1101668d4e5
     text-align: center;
     display: flex;
     align-items: center;
