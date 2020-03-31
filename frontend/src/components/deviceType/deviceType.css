@@ -1,23 +1,28 @@
-.device-type{
+.device-type {
     margin: 20px;
 }
-.chart{
+
+.chart {
     display: flex;
     align-items: center;
 }
-.box-custom{
+
+.box-custom {
     height: 5px;
     width: 10px;
     border-radius: 5px;
     margin-right: 10px;
 }
-.box-custom.android{
+
+.box-custom.android {
     background-color: #00cc99;
 }
-.box-custom.ios{
+
+.box-custom.ios {
     background-color: #8c1aff;
 }
-.title-pie{
+
+.title-pie {
     text-align: center;
     display: flex;
     align-items: center;

@@ -1,8 +1,10 @@
 import {GET_DEVICE_TYPE} from "../constants/action-types";
+import {getTypes} from "../api/deviceType-api";
 
-export const getDeviceType = (types) =>{
-    return {
-        type: GET_DEVICE_TYPE,
-        types: types
-    }
+export const  getDeviceType = async (dispatch) => {
+    const res = await getTypes();
+    return dispatch({
+      type: GET_DEVICE_TYPE,
+      res
+    })
 }
