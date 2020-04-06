@@ -5,8 +5,7 @@ export const deviceTypeReducer = (state = [], action) => {
     case GET_DEVICE_TYPE: {
       return {...state, iOS: action.res.iOS, android: action.res.android}
     }
-    default:
-      return state;
-  }
 
+  }
+  return state;
 }
