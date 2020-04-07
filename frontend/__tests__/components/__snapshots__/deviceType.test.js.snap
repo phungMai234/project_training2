@@ -1,0 +1,142 @@
+exports[`Device React-Redux Component should render Device with given state from Redux store 1`] = `
+<div
+  className="device-type">
+  <label>
+    Devive Type
+  </label>
+  <div
+    className="chart">
+    <svg
+      height={300}
+      width={300}>
+      <circle
+        cx={150}
+        cy={150}
+        fill="#ffffff"
+        r={50} />
+      <g>
+        <path
+          className={undefined}
+          clipPath={undefined}
+          d="M6.123233995736766e-15,-100A100,100,0,1,1,-58.778525229247336,80.90169943749473L-44.0838939219355,60.676274578121046A75,75,0,1,0,4.592425496802574e-15,-75Z"
+          role="presentation"
+          shapeRendering="auto"
+          style={
+            Object {
+              "fill": "#00cc99",
+              "padding": 10,
+              "stroke": "transparent",
+              "strokeWidth": 1,
+            }
+          }
+          transform="translate(150, 150)" />
+        <path
+          className={undefined}
+          clipPath={undefined}
+          d="M-58.778525229247336,80.90169943749473A100,100,0,0,1,-1.8369701987210297e-14,-100L-1.3777276490407723e-14,-75A75,75,0,0,0,-44.0838939219355,60.676274578121046Z"
+          role="presentation"
+          shapeRendering="auto"
+          style={
+            Object {
+              "fill": "#8c1aff",
+              "padding": 10,
+              "stroke": "transparent",
+              "strokeWidth": 1,
+            }
+          }
+          transform="translate(150, 150)" />
+        <text
+          className={undefined}
+          direction="inherit"
+          dx={0}
+          dy={4.97}
+          id="pie-labels-0"
+          tabIndex={undefined}
+          transform={undefined}
+          x={264}
+          y={187}>
+          <tspan
+            dx={0}
+            dy={undefined}
+            style={
+              Object {
+                "fill": "#252525",
+                "fontFamily": "\'Gill Sans\', \'Gill Sans MT\', \'Seravek\', \'Trebuchet MS\', sans-serif",
+                "fontSize": 14,
+                "letterSpacing": "normal",
+                "padding": 20,
+                "stroke": "transparent",
+              }
+            }
+            textAnchor="start"
+            x={264}>
+             
+          </tspan>
+        </text>
+        <text
+          className={undefined}
+          direction="inherit"
+          dx={0}
+          dy={4.97}
+          id="pie-labels-1"
+          tabIndex={undefined}
+          transform={undefined}
+          x={36}
+          y={113}>
+          <tspan
+            dx={0}
+            dy={undefined}
+            style={
+              Object {
+                "fill": "#252525",
+                "fontFamily": "\'Gill Sans\', \'Gill Sans MT\', \'Seravek\', \'Trebuchet MS\', sans-serif",
+                "fontSize": 14,
+                "letterSpacing": "normal",
+                "padding": 20,
+                "stroke": "transparent",
+              }
+            }
+            textAnchor="end"
+            x={36}>
+             
+          </tspan>
+        </text>
+      </g>
+    </svg>
+    <div>
+      <div>
+        <div
+          className="title-pie">
+          <div
+            className="box-custom ios">
+             
+          </div>
+          <label>
+            iOS
+          </label>
+        </div>
+        <label>
+          40
+           %
+        </label>
+      </div>
+      <div>
+        <div
+          className="title-pie">
+          <div
+            className="box-custom android">
+             
+          </div>
+          <label>
+            Android
+          </label>
+        </div>
+        <label>
+          60
+           %
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+`;

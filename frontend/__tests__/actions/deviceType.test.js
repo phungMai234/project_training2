@@ -5,11 +5,12 @@ import thunk from "redux-thunk";
 import axios from "axios"
 import MockAdapter from "axios-mock-adapter";
 
+
 const middlwares = [thunk];
 const mockStore = configureStore(middlwares);
 
 const mock = new MockAdapter(axios);
-const store = mockStore({});
+const store = mockStore({payload: {}});
 
 
 describe("actions", () => {
@@ -18,20 +19,19 @@ describe("actions", () => {
   });
 
   it("should create an action to get device types", () => {
-    mock.onGet('/request/device_summary').reply(200, {
+    mock.onGet('http://localhost:3001/request/device_summary').reply(200, {
       iOS: 40,
       android: 60
     })
-
+    let expectedActions = [{
+      type: GET_DEVICE_TYPE,
+      payload: {
+        iOS: 40,
+        android: 60
+      }
+    }]
     store.dispatch(getDeviceType()).then(() => {
-      let expectedActions = [{
-        type: GET_DEVICE_TYPE,
-        res: {
-          iOS: 40,
-          android: 60
-        }
-      }]
-      expect(store.getActions()).toEqual(expectedActions)
+      expect(store.getActions()).toEqual(expectedActions);
     })
   })
 })

@@ -1,18 +1,19 @@
 import {deviceTypeReducer} from "../../src/reducers/deviceType";
-import {GET_DEVICE_TYPE} from "../../src/constants/action-types";
+import {getDeviceType} from "../../src/actions/deviceType";
 
 describe("decive type reducer", () => {
-
-  it("should get device type to reducer", () => {
-    const initState = [];
-    const action = {type: GET_DEVICE_TYPE, res: {iOS: 40, android: 60}}
-    const actual = deviceTypeReducer(initState, action)
-
-    const expectedState = [{
+  const initialState = []
+  it("should get device types to empty list", () => {
+    let data = {
       iOS: 40,
       android: 60
-    }]
-    expect(expectedState).toEqual(actual);
-
+    }
+    expect(deviceTypeReducer(initialState, getDeviceType(data))).toMatchSnapshot();
   })
+  it('should handle unknown actions', () => {
+    expect(deviceTypeReducer(initialState, { type: 'FAKE' })).toBe(initialState);
+  });
+  it('should handle error', () => {
+    expect(deviceTypeReducer(initialState, { type: 'ERROR', message:"error" })).toBe(initialState);
+  });
 })
