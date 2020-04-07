@@ -1,17 +1,16 @@
-import {GET_DEVICE_TYPE} from "../constants/action-types";
-import {getTypes} from "../api/deviceType-api";
+import {GET_DEVICE_TYPE, ERROR} from "../constants/action-types";
+import axios from "axios"
 
-const fetchSucc = (data) => {
-  return {
-    type: GET_DEVICE_TYPE,
-    res: data
+export const getDeviceType = () => (
+  async dispatch => {
+    await axios.get("http://localhost:3001/request/device_summary")
+      .then(res => dispatch({
+        type: GET_DEVICE_TYPE,
+        payload: res.data
+      }))
+      .catch(err => dispatch({
+        type: ERROR,
+        message: err
+      }));
   }
-}
-export const getDeviceType = async (dispatch) => {
-    try {
-      let data = await getTypes();
-      dispatch(fetchSucc(data))
-    } catch (error) {
-      console.log(error)
-    }
-}
+)

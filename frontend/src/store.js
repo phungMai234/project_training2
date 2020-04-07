@@ -1,10 +1,5 @@
 import {rootReducer} from "./reducers/root";
-import {createStore} from 'redux';
-const init = {
-  types:{
-    iOS: 50,
-    android: 50
-  }
-}
+import {createStore, applyMiddleware} from 'redux';
+import thunk from 'redux-thunk'
 
-export const store = createStore(rootReducer, init);
+export const store = createStore(rootReducer, applyMiddleware(thunk) );
