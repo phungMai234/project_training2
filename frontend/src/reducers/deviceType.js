@@ -6,7 +6,6 @@ export const deviceTypeReducer = (state = [], action) => {
       return {...state, iOS: action.payload.iOS, android: action.payload.android}
     }
     case ERROR:{
-      console.log(action.message);
       return state;
     }
     default:

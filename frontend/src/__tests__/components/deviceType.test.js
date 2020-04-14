@@ -2,7 +2,7 @@ import React from 'react';
 import {Provider} from 'react-redux';
 import renderer from 'react-test-renderer';
 import configureStore from 'redux-mock-store';
-import DeviceType from "../../src/components/deviceType/deviceType";
+import DeviceType from "../../components/deviceType/deviceType";
 
 const mockStore = configureStore([]);
 

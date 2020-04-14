@@ -10,23 +10,21 @@ const host = process.env.HOST;
 const app = express();
 
 app.use(BodyParser.json());
-app.use(BodyParser.urlencoded({ extended: true }));
+app.use(BodyParser.urlencoded({extended: true}));
 app.use(cors())
 
-app.use('/request/device_summary', (req, res) =>{
-    res.status(200).send({
-        iOS: 40,
-        android: 60
-    })
+app.use('/request/device_summary', (req, res) => {
+  res.status(200).send({
+    iOS: 40,
+    android: 60
+  })
 });
 
 app.listen(port, host, function (err) {
-    if(err)
-    {
-        console.log(err)
-    }
-    else {
-        console.log(`your port and host is ${port} ${host}`)
-    }
+  if (err) {
+    console.log(err)
+  } else {
+    console.log(`your port and host is ${port} ${host}`)
+  }
 });
 
