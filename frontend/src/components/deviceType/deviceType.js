@@ -3,7 +3,7 @@ import './deviceType.css';
 import {connect} from "react-redux"
 import {VictoryPie} from "victory"
 import {getDeviceType} from "../../actions/deviceType";
-import {store} from "../../store";
+
 
 function DeviceType(props) {
 
@@ -11,9 +11,11 @@ function DeviceType(props) {
   let android = props.types.android;
 
   useEffect(() => {
-    props.getDeviceType();
-
-  }, [])
+    const fetchData = () =>{
+      return props.getDeviceType();
+    }
+    fetchData();
+  }, []);
 
   return (
     <div className="device-type">
