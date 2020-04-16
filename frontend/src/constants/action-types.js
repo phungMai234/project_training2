@@ -1,0 +1,6 @@
+const GET_DEVICE_TYPE = 'GET_DEVICE_TYPE';
+const ERROR= "ERROR"
+export {
+  GET_DEVICE_TYPE,
+  ERROR
+}
