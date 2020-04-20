@@ -10,9 +10,9 @@ import DeviceType from "./components/deviceType/deviceType";
 class App extends Component {
   render() {
     return (
-        <DeviceType/>
-
+      <DeviceType/>
     );
   }
 }
+
 export default App;
