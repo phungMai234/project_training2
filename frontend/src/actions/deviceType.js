@@ -1,16 +1,22 @@
-import {GET_DEVICE_TYPE, ERROR} from "../constants/action-types";
+import {GET_TYPES} from "../constants/action-types";
 import axios from "axios"
 
-export const getDeviceType = () => (
-  async dispatch => {
-    await axios.get("http://localhost:3001/request/device_summary")
-      .then(res => dispatch({
-        type: GET_DEVICE_TYPE,
-        payload: res.data
-      }))
-      .catch(err => dispatch({
-        type: ERROR,
-        message: err
-      }));
+const getTypesRequest = () => ({
+  type: GET_TYPES.PENDING
+})
+const getTypesSuccess = (data) => ({
+  type: GET_TYPES.SUCCESS,
+  payload: data
+})
+const getTypesError = (message) => ({
+  type: GET_TYPES.ERROR,
+  message: message
+})
+export const getTypes = () => {
+  return dispatch => {
+    dispatch(getTypesRequest());
+    return axios.get("http://localhost:3000/request/device_summary")
+      .then(res => dispatch(getTypesSuccess(res.data)))
+      .catch(err => dispatch(getTypesError(err.message)));
   }
-)
+}

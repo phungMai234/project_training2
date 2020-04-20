@@ -12,8 +12,11 @@ describe('Device React-Redux Component', () => {
   beforeEach(() => {
     store = mockStore({
       types: {
-        iOS: 40,
-        android: 60
+        data: {
+          iOS: 40,
+          android: 60
+        },
+        isFetching: false
       }
     });
     component = renderer.create(
