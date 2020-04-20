@@ -14,10 +14,15 @@ app.use(BodyParser.urlencoded({extended: true}));
 app.use(cors())
 
 app.use('/request/device_summary', (req, res) => {
-  res.status(200).send({
-    iOS: 40,
-    android: 60
-  })
+  setTimeout(
+    () => {
+      res.status(200).send({
+        iOS: 40,
+        android: 60
+      })
+    }, 10000)
+
+
 });
 
 app.listen(port, host, function (err) {

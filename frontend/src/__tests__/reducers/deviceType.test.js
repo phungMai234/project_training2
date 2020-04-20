@@ -1,15 +1,21 @@
 import {deviceTypeReducer} from "../../reducers/deviceType";
-import {getDeviceType} from "../../actions/deviceType";
-
+import {getTypes} from "../../actions/deviceType";
+import {GET_TYPES} from "../../constants/action-types";
+const initialState = {
+  data: [],
+  isFetching: false
+}
 describe("decive type reducer", () => {
-  const initialState = []
   it("should get device types to empty list", () => {
-    expect(deviceTypeReducer(initialState, getDeviceType())).toMatchSnapshot();
+    expect(deviceTypeReducer(initialState, getTypes())).toMatchSnapshot();
   })
   it('should handle unknown actions', () => {
-    expect(deviceTypeReducer(initialState, { type: 'FAKE' })).toBe(initialState);
+    expect(deviceTypeReducer(undefined, {})).toEqual(initialState);
   });
-  it('should handle error', () => {
-    expect(deviceTypeReducer(initialState, { type: 'ERROR', message:"error" })).toBe(initialState);
+  it("should handle loading time", () => {
+    expect(deviceTypeReducer(initialState, {type: GET_TYPES.PENDING})).toEqual({data:[], isFetching: true});
+  })
+  it('should handle error', (err="error") => {
+    expect(deviceTypeReducer(initialState, {type: GET_TYPES.ERROR, message: err})).toEqual({data:[], isFetching: false, errorMessage: err});
   });
 })
