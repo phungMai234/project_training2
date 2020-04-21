@@ -9,7 +9,7 @@ jest.mock('axios', () => ({
     }
   })
 }))
-describe("actions", ()=>{
+describe("device types actions", ()=>{
   it("should create an action to get device types", async () => {
     const res = await axios.get("http://localhost:3001/request/device_summary");
     const actual = {

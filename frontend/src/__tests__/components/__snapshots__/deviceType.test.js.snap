@@ -1,18 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Device React-Redux Component should render Device with given state from Redux store 1`] = `
+exports[`Device Component should render Device with given state from Redux store 1`] = `
 <div
   className="device-type"
 >
-  <label>
+  <label
+    className="text-secondary"
+  >
     Devive Type
   </label>
   <div
-    className="chart"
+    className="d-flex justify-content-center"
   >
     <svg
-      height={300}
-      width={300}
+      height={200}
+      width={200}
     >
       <circle
         cx={150}
@@ -22,7 +24,7 @@ exports[`Device React-Redux Component should render Device with given state from
       />
       <g>
         <path
-          d="M6.123233995736766e-15,-100A100,100,0,1,1,-58.778525229247336,80.90169943749473L-44.0838939219355,60.676274578121046A75,75,0,1,0,4.592425496802574e-15,-75Z"
+          d="M4.592425496802574e-15,-75A75,75,0,1,1,-44.0838939219355,60.676274578121046L-29.389262614623668,40.450849718747364A50,50,0,1,0,3.061616997868383e-15,-50Z"
           role="presentation"
           shapeRendering="auto"
           style={
@@ -33,10 +35,10 @@ exports[`Device React-Redux Component should render Device with given state from
               "strokeWidth": 1,
             }
           }
-          transform="translate(150, 150)"
+          transform="translate(100, 100)"
         />
         <path
-          d="M-58.778525229247336,80.90169943749473A100,100,0,0,1,-1.8369701987210297e-14,-100L-1.3777276490407723e-14,-75A75,75,0,0,0,-44.0838939219355,60.676274578121046Z"
+          d="M-44.0838939219355,60.676274578121046A75,75,0,0,1,-1.3777276490407723e-14,-75L-9.184850993605149e-15,-50A50,50,0,0,0,-29.389262614623668,40.450849718747364Z"
           role="presentation"
           shapeRendering="auto"
           style={
@@ -47,15 +49,15 @@ exports[`Device React-Redux Component should render Device with given state from
               "strokeWidth": 1,
             }
           }
-          transform="translate(150, 150)"
+          transform="translate(100, 100)"
         />
         <text
           direction="inherit"
           dx={0}
           dy={4.97}
           id="pie-labels-0"
-          x={264}
-          y={187}
+          x={167}
+          y={122}
         >
           <tspan
             dx={0}
@@ -70,7 +72,7 @@ exports[`Device React-Redux Component should render Device with given state from
               }
             }
             textAnchor="start"
-            x={264}
+            x={167}
           >
              
           </tspan>
@@ -80,8 +82,8 @@ exports[`Device React-Redux Component should render Device with given state from
           dx={0}
           dy={4.97}
           id="pie-labels-1"
-          x={36}
-          y={113}
+          x={33}
+          y={78}
         >
           <tspan
             dx={0}
@@ -96,49 +98,53 @@ exports[`Device React-Redux Component should render Device with given state from
               }
             }
             textAnchor="end"
-            x={36}
+            x={33}
           >
              
           </tspan>
         </text>
       </g>
     </svg>
-    <div>
+    <div
+      className="d-flex align-items-center"
+    >
       <div>
-        <div
-          className="title-pie"
-        >
+        <div>
           <div
-            className="box-custom ios"
+            className="title-pie"
           >
-             
+            <div
+              className="box-custom ios"
+            >
+               
+            </div>
+            <label>
+              iOS
+            </label>
           </div>
           <label>
-            iOS
+            40
+             %
           </label>
         </div>
-        <label>
-          40
-           %
-        </label>
-      </div>
-      <div>
-        <div
-          className="title-pie"
-        >
+        <div>
           <div
-            className="box-custom android"
+            className="title-pie"
           >
-             
+            <div
+              className="box-custom android"
+            >
+               
+            </div>
+            <label>
+              Android
+            </label>
           </div>
           <label>
-            Android
+            60
+             %
           </label>
         </div>
-        <label>
-          60
-           %
-        </label>
       </div>
     </div>
   </div>

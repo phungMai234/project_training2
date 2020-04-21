@@ -15,7 +15,7 @@ const getTypesError = (message) => ({
 export const getTypes = () => {
   return dispatch => {
     dispatch(getTypesRequest());
-    return axios.get("http://localhost:3000/request/device_summary")
+    return axios.get("http://localhost:3001/request/device_summary")
       .then(res => dispatch(getTypesSuccess(res.data)))
       .catch(err => dispatch(getTypesError(err.message)));
   }

@@ -5,7 +5,7 @@ const initialState = {
   data: [],
   isFetching: false
 }
-describe("decive type reducer", () => {
+describe("device types reducer", () => {
   it("should get device types to empty list", () => {
     expect(deviceTypeReducer(initialState, getTypes())).toMatchSnapshot();
   })
