@@ -1,0 +1,32 @@
+.container-analysis{
+    font-family: Times New Roman;
+}
+.header{
+    background-color: #ffff;
+    min-height: 10vh;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin-left: 30px;
+    box-shadow: 0 1px 2px #0000;
+}
+.header-item label{
+    margin: 0px 10px;
+    font-size: 14px;
+}
+.body{
+    background-color: #e6e6e6;
+    position: absolute;
+    top:10vh;
+    left: 0;
+    right: 0;
+    padding: 10px 20px;
+    overflow: auto;
+}
+
+.box{
+    margin: 10px 10px;
+    background-color: #ffffff;
+    min-height: 250px;
+}

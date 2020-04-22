@@ -2,30 +2,27 @@ import React from 'react';
 import {Provider} from 'react-redux';
 import renderer from 'react-test-renderer';
 import configureStore from 'redux-mock-store';
-import DeviceType from "../../components/deviceType/deviceType";
+import RankingChart from "../../components/ranking/rankingChart";
 
 const mockStore = configureStore([]);
 
-describe('Device Component', () => {
+describe('Ranking Chart Component', () => {
   let store;
   let component;
   beforeEach(() => {
     store = mockStore({
-      types: {
-        data: {
-          iOS: 40,
-          android: 60
-        },
+      rankings: {
+        data: [20, 4, 5, 7, 2, 4, 8],
         isFetching: false
       }
     });
     component = renderer.create(
       <Provider store={store}>
-        <DeviceType/>
+        <RankingChart/>
       </Provider>
     );
   })
-  it('should render Device with given state from Redux store', () => {
+  it('should render Ranking Chart with given state from Redux store', () => {
     expect(component.toJSON()).toMatchSnapshot();
   });
 })

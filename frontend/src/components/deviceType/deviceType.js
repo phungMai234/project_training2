@@ -23,16 +23,18 @@ function DeviceType(props) {
 
   return (
     <div className="device-type">
-      <label>Devive Type</label>
+      <label className="text-secondary">Devive Type</label>
       {
         isFetching ? <Spinner/>
-          : <div className="chart">
-            <svg width={300} height={300}>
+          :
+          <div className="d-flex justify-content-center">
+            <svg width={200} height={200}>
               <circle cx={150} cy={150} r={50} fill="#ffffff"/>
               <VictoryPie
                 standalone={false}
+                responsive={false}
                 colorScale={["#00cc99", "#8c1aff"]}
-                width={300} height={300}
+                width={200} height={200}
                 innerRadius={75}
                 data={[
                   {x: " ", y: android},
@@ -40,20 +42,22 @@ function DeviceType(props) {
                 ]}
               />
             </svg>
-            <div>
+            <div className="d-flex align-items-center">
               <div>
-                <div className="title-pie">
-                  <div className="box-custom ios">&nbsp;</div>
-                  <label>iOS</label>
+                <div>
+                  <div className="title-pie">
+                    <div className="box-custom ios">&nbsp;</div>
+                    <label>iOS</label>
+                  </div>
+                  <label>{iOS} %</label>
                 </div>
-                <label>{iOS} %</label>
-              </div>
-              <div>
-                <div className="title-pie">
-                  <div className="box-custom android">&nbsp;</div>
-                  <label>Android</label>
+                <div>
+                  <div className="title-pie">
+                    <div className="box-custom android">&nbsp;</div>
+                    <label>Android</label>
+                  </div>
+                  <label>{android} %</label>
                 </div>
-                <label>{android} %</label>
               </div>
             </div>
           </div>

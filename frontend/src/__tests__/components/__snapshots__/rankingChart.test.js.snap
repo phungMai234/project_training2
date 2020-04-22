@@ -1,0 +1,163 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Ranking Chart Component should render Ranking Chart with given state from Redux store 1`] = `
+<div
+  className="ranking"
+>
+  <label
+    className="text-secondary"
+  >
+    Ranking
+  </label>
+  <div
+    className="d-flex justify-content-between"
+  >
+    <span>
+      Day
+    </span>
+    <span>
+      Number
+    </span>
+  </div>
+  <div
+    className="progress d-flex justify-content-between"
+  >
+    <div
+      className="progress-bar align-items-start"
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    >
+      <span>
+        Day 
+        1
+      </span>
+    </div>
+    <span>
+      20
+    </span>
+  </div>
+  <div
+    className="progress d-flex justify-content-between"
+  >
+    <div
+      className="progress-bar align-items-start"
+      style={
+        Object {
+          "width": "20%",
+        }
+      }
+    >
+      <span>
+        Day 
+        2
+      </span>
+    </div>
+    <span>
+      4
+    </span>
+  </div>
+  <div
+    className="progress d-flex justify-content-between"
+  >
+    <div
+      className="progress-bar align-items-start"
+      style={
+        Object {
+          "width": "25%",
+        }
+      }
+    >
+      <span>
+        Day 
+        3
+      </span>
+    </div>
+    <span>
+      5
+    </span>
+  </div>
+  <div
+    className="progress d-flex justify-content-between"
+  >
+    <div
+      className="progress-bar align-items-start"
+      style={
+        Object {
+          "width": "35%",
+        }
+      }
+    >
+      <span>
+        Day 
+        4
+      </span>
+    </div>
+    <span>
+      7
+    </span>
+  </div>
+  <div
+    className="progress d-flex justify-content-between"
+  >
+    <div
+      className="progress-bar align-items-start"
+      style={
+        Object {
+          "width": "10%",
+        }
+      }
+    >
+      <span>
+        Day 
+        5
+      </span>
+    </div>
+    <span>
+      2
+    </span>
+  </div>
+  <div
+    className="progress d-flex justify-content-between"
+  >
+    <div
+      className="progress-bar align-items-start"
+      style={
+        Object {
+          "width": "20%",
+        }
+      }
+    >
+      <span>
+        Day 
+        6
+      </span>
+    </div>
+    <span>
+      4
+    </span>
+  </div>
+  <div
+    className="progress d-flex justify-content-between"
+  >
+    <div
+      className="progress-bar align-items-start"
+      style={
+        Object {
+          "width": "40%",
+        }
+      }
+    >
+      <span>
+        Day 
+        7
+      </span>
+    </div>
+    <span>
+      8
+    </span>
+  </div>
+</div>
+`;

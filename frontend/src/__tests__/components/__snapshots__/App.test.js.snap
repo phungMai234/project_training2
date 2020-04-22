@@ -1,0 +1,375 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Component should render App with given state from Redux store 1`] = `
+<div
+  className="container-analysis"
+>
+  <div
+    className="header"
+  >
+    <div
+      className="row align-items-center"
+    >
+      <span>
+        Analysis
+      </span>
+      <span
+        className="text-secondary ml-4"
+      >
+        Device List
+      </span>
+    </div>
+    <div
+      className="row align-items-center"
+    >
+      <label
+        className="font-1"
+      >
+        Range
+      </label>
+    </div>
+  </div>
+  <div
+    className="body"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="col-sm-4 box"
+      >
+        <div
+          className="device-type"
+        >
+          <label
+            className="text-secondary"
+          >
+            Devive Type
+          </label>
+          <div
+            className="d-flex justify-content-center"
+          >
+            <svg
+              height={200}
+              width={200}
+            >
+              <circle
+                cx={150}
+                cy={150}
+                fill="#ffffff"
+                r={50}
+              />
+              <g>
+                <path
+                  d="M4.592425496802574e-15,-75A75,75,0,1,1,-44.0838939219355,60.676274578121046L-29.389262614623668,40.450849718747364A50,50,0,1,0,3.061616997868383e-15,-50Z"
+                  role="presentation"
+                  shapeRendering="auto"
+                  style={
+                    Object {
+                      "fill": "#00cc99",
+                      "padding": 10,
+                      "stroke": "transparent",
+                      "strokeWidth": 1,
+                    }
+                  }
+                  transform="translate(100, 100)"
+                />
+                <path
+                  d="M-44.0838939219355,60.676274578121046A75,75,0,0,1,-1.3777276490407723e-14,-75L-9.184850993605149e-15,-50A50,50,0,0,0,-29.389262614623668,40.450849718747364Z"
+                  role="presentation"
+                  shapeRendering="auto"
+                  style={
+                    Object {
+                      "fill": "#8c1aff",
+                      "padding": 10,
+                      "stroke": "transparent",
+                      "strokeWidth": 1,
+                    }
+                  }
+                  transform="translate(100, 100)"
+                />
+                <text
+                  direction="inherit"
+                  dx={0}
+                  dy={4.97}
+                  id="pie-labels-0"
+                  x={167}
+                  y={122}
+                >
+                  <tspan
+                    dx={0}
+                    style={
+                      Object {
+                        "fill": "#252525",
+                        "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                        "fontSize": 14,
+                        "letterSpacing": "normal",
+                        "padding": 20,
+                        "stroke": "transparent",
+                      }
+                    }
+                    textAnchor="start"
+                    x={167}
+                  >
+                     
+                  </tspan>
+                </text>
+                <text
+                  direction="inherit"
+                  dx={0}
+                  dy={4.97}
+                  id="pie-labels-1"
+                  x={33}
+                  y={78}
+                >
+                  <tspan
+                    dx={0}
+                    style={
+                      Object {
+                        "fill": "#252525",
+                        "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Seravek', 'Trebuchet MS', sans-serif",
+                        "fontSize": 14,
+                        "letterSpacing": "normal",
+                        "padding": 20,
+                        "stroke": "transparent",
+                      }
+                    }
+                    textAnchor="end"
+                    x={33}
+                  >
+                     
+                  </tspan>
+                </text>
+              </g>
+            </svg>
+            <div
+              className="d-flex align-items-center"
+            >
+              <div>
+                <div>
+                  <div
+                    className="title-pie"
+                  >
+                    <div
+                      className="box-custom ios"
+                    >
+                       
+                    </div>
+                    <label>
+                      iOS
+                    </label>
+                  </div>
+                  <label>
+                    40
+                     %
+                  </label>
+                </div>
+                <div>
+                  <div
+                    className="title-pie"
+                  >
+                    <div
+                      className="box-custom android"
+                    >
+                       
+                    </div>
+                    <label>
+                      Android
+                    </label>
+                  </div>
+                  <label>
+                    60
+                     %
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="col-sm-7 box"
+      >
+        Device
+      </div>
+    </div>
+    <div
+      className="row"
+    >
+      <div
+        className="col-sm-4 box"
+      >
+        <div
+          className="ranking"
+        >
+          <label
+            className="text-secondary"
+          >
+            Ranking
+          </label>
+          <div
+            className="d-flex justify-content-between"
+          >
+            <span>
+              Day
+            </span>
+            <span>
+              Number
+            </span>
+          </div>
+          <div
+            className="progress d-flex justify-content-between"
+          >
+            <div
+              className="progress-bar align-items-start"
+              style={
+                Object {
+                  "width": "100%",
+                }
+              }
+            >
+              <span>
+                Day 
+                1
+              </span>
+            </div>
+            <span>
+              20
+            </span>
+          </div>
+          <div
+            className="progress d-flex justify-content-between"
+          >
+            <div
+              className="progress-bar align-items-start"
+              style={
+                Object {
+                  "width": "20%",
+                }
+              }
+            >
+              <span>
+                Day 
+                2
+              </span>
+            </div>
+            <span>
+              4
+            </span>
+          </div>
+          <div
+            className="progress d-flex justify-content-between"
+          >
+            <div
+              className="progress-bar align-items-start"
+              style={
+                Object {
+                  "width": "25%",
+                }
+              }
+            >
+              <span>
+                Day 
+                3
+              </span>
+            </div>
+            <span>
+              5
+            </span>
+          </div>
+          <div
+            className="progress d-flex justify-content-between"
+          >
+            <div
+              className="progress-bar align-items-start"
+              style={
+                Object {
+                  "width": "35%",
+                }
+              }
+            >
+              <span>
+                Day 
+                4
+              </span>
+            </div>
+            <span>
+              7
+            </span>
+          </div>
+          <div
+            className="progress d-flex justify-content-between"
+          >
+            <div
+              className="progress-bar align-items-start"
+              style={
+                Object {
+                  "width": "10%",
+                }
+              }
+            >
+              <span>
+                Day 
+                5
+              </span>
+            </div>
+            <span>
+              2
+            </span>
+          </div>
+          <div
+            className="progress d-flex justify-content-between"
+          >
+            <div
+              className="progress-bar align-items-start"
+              style={
+                Object {
+                  "width": "20%",
+                }
+              }
+            >
+              <span>
+                Day 
+                6
+              </span>
+            </div>
+            <span>
+              4
+            </span>
+          </div>
+          <div
+            className="progress d-flex justify-content-between"
+          >
+            <div
+              className="progress-bar align-items-start"
+              style={
+                Object {
+                  "width": "40%",
+                }
+              }
+            >
+              <span>
+                Day 
+                7
+              </span>
+            </div>
+            <span>
+              8
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        className="col-sm-4 box"
+      >
+        Device hour
+      </div>
+      <div
+        className="col-sm-3 box"
+      >
+        Top 1
+      </div>
+    </div>
+  </div>
+</div>
+`;

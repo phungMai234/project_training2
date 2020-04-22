@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`device types reducer should get device types to empty list 1`] = `
+exports[`ranking reducer should get ranking to empty list 1`] = `
 Object {
   "data": Array [],
   "isFetching": false,
