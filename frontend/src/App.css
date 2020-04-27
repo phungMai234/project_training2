@@ -1,5 +1,7 @@
 .container-analysis{
     font-family: Times New Roman;
+    margin: 0;
+    padding: 0;
 }
 .header{
     background-color: #ffff;

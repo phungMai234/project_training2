@@ -2,26 +2,15 @@ import React from 'react';
 import {Provider} from 'react-redux';
 import renderer from 'react-test-renderer';
 import configureStore from 'redux-mock-store';
-import App from "../../App";
+import DeviceHour from "../../components/deviceHour/deviceHour";
 
 const mockStore = configureStore([]);
 
-describe('App Component', () => {
+describe('Device hour Component', () => {
   let store;
   let component;
   beforeEach(() => {
     store = mockStore({
-      types: {
-        data: {
-          iOS: 40,
-          android: 60
-        },
-        isFetching: false
-      },
-      rankings: {
-        data: [20, 4, 5, 7, 2, 4, 8],
-        isFetching: false
-      },
       hour: {
         data: [{
           "name": "Monday",
@@ -155,11 +144,11 @@ describe('App Component', () => {
     });
     component = renderer.create(
       <Provider store={store}>
-        <App/>
+        <DeviceHour/>
       </Provider>
     );
   })
-  it('should render App with given state from Redux store', () => {
+  it('should render Device hour with given state from Redux store', () => {
     expect(component.toJSON()).toMatchSnapshot();
   });
 })

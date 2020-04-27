@@ -7,6 +7,7 @@ import '@fortawesome/fontawesome-free/css/all.css'
 
 import DeviceType from "./components/deviceType/deviceType";
 import Ranking from "./components/ranking/rankingChart";
+import DeviceHour from "./components/deviceHour/deviceHour";
 
 class App extends Component {
   render() {
@@ -23,17 +24,17 @@ class App extends Component {
         </div>
         <div className="body">
           <div className="row">
-            <div className="col-sm-4 box">
+            <div className="col-sm-3 box">
               <DeviceType/>
             </div>
-            <div className="col-sm-7 box">Device</div>
+            <div className="col-sm-8 box">Device</div>
           </div>
           <div className="row">
-            <div className="col-sm-4 box">
+            <div className="col-sm-3 box">
               <Ranking/>
             </div>
-            <div className="col-sm-4 box">Device hour</div>
-            <div className="col-sm-3 box">Top 1</div>
+            <div className="col-sm-6 box"><DeviceHour/></div>
+            <div className="col-sm-2 box">Top</div>
           </div>
         </div>
       </div>

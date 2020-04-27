@@ -5,3 +5,4 @@ const asyncActionType = (type) => ({
 });
 export const GET_TYPES = asyncActionType('GET_TYPES');
 export const GET_RANKING = asyncActionType('GET_RANKING');
+export const GET_HOUR = asyncActionType('GET_HOUR');
