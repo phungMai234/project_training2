@@ -69,11 +69,7 @@ function BarChart(props) {
 
   }
   return (
-    <Chart options={options}
-           series={bar}
-           type="bar"
-           height={"260"}
-    />
+    <Chart options={options} series={bar} type="bar" height={"260"}/>
   )
 
 }
