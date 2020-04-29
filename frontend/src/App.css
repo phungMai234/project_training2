@@ -1,9 +1,10 @@
-.container-analysis{
+.container-analysis {
     font-family: Times New Roman;
     margin: 0;
     padding: 0;
 }
-.header{
+
+.header {
     background-color: #ffff;
     min-height: 10vh;
     position: absolute;
@@ -13,22 +14,65 @@
     margin-left: 30px;
     box-shadow: 0 1px 2px #0000;
 }
-.header-item label{
+
+.header-item label {
     margin: 0px 10px;
     font-size: 14px;
 }
-.body{
+
+.body {
     background-color: #e6e6e6;
     position: absolute;
-    top:10vh;
+    top: 10vh;
     left: 0;
     right: 0;
     padding: 10px 20px;
     overflow: auto;
 }
 
-.box{
+.box {
     margin: 10px 10px;
     background-color: #ffffff;
     min-height: 250px;
+}
+
+/*react date range*/
+.DateRangePickerInput {
+    background-color: #d9d9d9 !important;
+    display: inline-block;
+}
+
+.DateRangePicker {
+    position: relative;
+    display: inline-block;
+}
+
+.DateRangePickerInput__withBorder {
+    border-radius: 2px;
+    border: 1px solid #dbdbdb;
+}
+
+.DateInput {
+    font-size: 15px !important;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    position: relative;
+    display: inline-block;
+    width: 80px !important;
+    vertical-align: middle;
+}
+
+.DateInput_input {
+    font-weight: 200;
+    font-size: 14px !important;
+    color: #484848;
+    background-color: #d9d9d9 !important;
+    padding: 2px 5px 2px 10px !important;
+    border: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 2px solid transparent;
+    border-left: 0;
+    border-radius: 0;
 }

@@ -6,12 +6,12 @@ jest.mock('axios', () => ({
     status: 200
   })
 }))
-describe("device hour actions", () => {
+describe("device types actions", () => {
   let startDate = moment(Date.now()).format("YYYY/MM/DD");
   let endDate = moment(Date.now()).format("YYYY/MM/DD");
 
-  it("should create an action to get hour", async () => {
-    const res = await axios.get(`http://localhost:3001/request/device_hour?startDate=${startDate}&endDate=${endDate}`);
+  it("should create an action to get types", async () => {
+    const res = await axios.get(`http://localhost:3001/request/device_summary?startDate=${startDate}&endDate=${endDate}`);
     expect(res.status).toEqual(200);
   })
 })

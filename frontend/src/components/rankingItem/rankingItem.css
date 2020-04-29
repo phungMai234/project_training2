@@ -1,4 +1,4 @@
-.progress{
+.progress {
     font-size: 15px;
     height: 40px;
     border-bottom: 1px solid lightgray;
@@ -6,7 +6,8 @@
     align-items: center;
     background-color: #ffffff;
 }
-.progress-bar{
+
+.progress-bar {
     margin: 0;
     padding: 10px 5px;
     height: 40px;

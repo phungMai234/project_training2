@@ -8,13 +8,15 @@ import {getHour} from "../../actions/deviceHour";
 
 function DeviceHour(props) {
   const isFetching = props.isFetching;
+  const query = props.query;
+
   useEffect(() => {
     const fetchData = () => {
-      return props.getHour();
+      return props.getHour(query);
     }
     fetchData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [query]);
   return (<div className="device-hour">
     <label className="text-secondary">Device by hour</label>
     {
@@ -33,10 +35,11 @@ function DeviceHour(props) {
 }
 
 const mapStateToProps = state => ({
-  isFetching: state.hour.isFetching
+  isFetching: state.hour.isFetching,
+  query: state.query.data
 })
 const mapDispatchToProps = dispatch => ({
-  getHour: () => dispatch(getHour())
+  getHour: (query) => dispatch(getHour(query))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(DeviceHour);

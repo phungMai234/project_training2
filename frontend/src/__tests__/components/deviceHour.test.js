@@ -11,6 +11,12 @@ describe('Device hour Component', () => {
   let component;
   beforeEach(() => {
     store = mockStore({
+      query: {
+        data: {
+          startDate: "2019/04/29",
+          endDate: "2019/04/29"
+        }
+      },
       hour: {
         data: [{
           "name": "Monday",

@@ -15,21 +15,39 @@ app.use(BodyParser.urlencoded({extended: true}));
 app.use(cors())
 
 app.get('/request/device_summary', (req, res) => {
+  let {startDate, endDate} = req.query;
+  if (!startDate || !endDate)
+    throw new Error("Something missing");
+
   setTimeout(
     () => {
+      let n1 = _.random(0, 100);
+      let n2 = 100 - n1;
       res.status(200).send({
-        iOS: 40,
-        android: 60
+        iOS: n1,
+        android: n2
       })
-    }, 0)
+    }, 1000)
 });
 app.get("/request/ranking", (req, res) => {
+  let {startDate, endDate} = req.query;
+  if (!startDate || !endDate)
+    throw new Error("Something missing");
   setTimeout(() => {
-    res.status(200).send([20, 4, 5, 7, 2, 4, 8]
+    let arr = []
+    for (let i = 0; i < 7; i++) {
+      arr.push(_.random(0, 20))
+    }
+    res.status(200).send(
+      arr
     )
-  }, 0)
+  }, 3000)
 })
 app.get("/request/device_hour", (req, res) => {
+  let {startDate, endDate} = req.query;
+  if (!startDate || !endDate)
+    throw new Error("Something missing");
+
   setTimeout(() => {
     const listHour = _.map(
       ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
@@ -42,7 +60,7 @@ app.get("/request/device_hour", (req, res) => {
       })
     )
     res.status(200).send(listHour);
-  }, 0)
+  }, 2000)
 })
 app.listen(port, host, function (err) {
   if (err) {

@@ -12,11 +12,13 @@ const getTypesError = (message) => ({
   type: GET_TYPES.ERROR,
   message: message
 })
-export const getTypes = () => {
+export const getTypes = (query) => {
   return dispatch => {
     dispatch(getTypesRequest());
-    return axios.get("http://localhost:3001/request/device_summary")
+    return axios.get(`http://localhost:3001/request/device_summary?startDate=${query.startDate}&endDate=${query.endDate}`)
       .then(res => dispatch(getTypesSuccess(res.data)))
-      .catch(err => dispatch(getTypesError(err.message)));
+      .catch(err => {
+        dispatch(getTypesError(err.message))
+      });
   }
 }
