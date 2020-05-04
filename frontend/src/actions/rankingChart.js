@@ -12,10 +12,10 @@ const getRankingError = (message) => ({
   type: GET_RANKING.ERROR,
   message: message
 })
-export const getRanking = (query) => {
+export const getRanking = (dateRange) => {
   return dispatch => {
     dispatch(getRankingRequest());
-    return axios.get(`http://localhost:3001/request/ranking?startDate=${query.startDate}&endDate=${query.endDate}`)
+    return axios.get(`http://localhost:3001/request/ranking?startDate=${dateRange.startDate}&endDate=${dateRange.endDate}`)
       .then(res => dispatch(getRankingSuccess(res.data)))
       .catch(err => dispatch(getRankingError(err.message)));
   }

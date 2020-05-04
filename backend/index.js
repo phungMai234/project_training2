@@ -1,7 +1,7 @@
 const express = require('express');
 const BodyParser = require('body-parser');
 const cors = require('cors');
-var _ = require('lodash');
+let _ = require('lodash');
 
 require('dotenv').config();
 
@@ -16,9 +16,12 @@ app.use(cors())
 
 app.get('/request/device_summary', (req, res) => {
   let {startDate, endDate} = req.query;
-  if (!startDate || !endDate)
-    throw new Error("Something missing");
-
+  if (!startDate || !endDate) {
+    return res.status(400).send(send({
+      success: "fail",
+      messages: "Complete end date and start date"
+    }))
+  }
   setTimeout(
     () => {
       let n1 = _.random(0, 100);
@@ -27,26 +30,35 @@ app.get('/request/device_summary', (req, res) => {
         iOS: n1,
         android: n2
       })
-    }, 1000)
+    }, 2000)
 });
 app.get("/request/ranking", (req, res) => {
   let {startDate, endDate} = req.query;
-  if (!startDate || !endDate)
-    throw new Error("Something missing");
-  setTimeout(() => {
-    let arr = []
-    for (let i = 0; i < 7; i++) {
-      arr.push(_.random(0, 20))
-    }
-    res.status(200).send(
-      arr
-    )
-  }, 3000)
+  if (!startDate || !endDate) {
+    return res.status(400).send({
+      success: "fail",
+      messages: "Complete end date and start date"
+    })
+  } else {
+    setTimeout(() => {
+      let arr = []
+      for (let i = 0; i < 7; i++) {
+        arr.push(_.random(0, 20))
+      }
+      res.status(200).send(
+        arr
+      )
+    }, 3000)
+  }
+
 })
 app.get("/request/device_hour", (req, res) => {
   let {startDate, endDate} = req.query;
   if (!startDate || !endDate)
-    throw new Error("Something missing");
+    return res.status(400).send(send({
+      success: "fail",
+      messages: "Complete end date and start date"
+    }))
 
   setTimeout(() => {
     const listHour = _.map(

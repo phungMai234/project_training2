@@ -9,4 +9,4 @@ export const END_DATE = "END_DATE";
 export const GET_TYPES = asyncActionType('GET_TYPES');
 export const GET_RANKING = asyncActionType('GET_RANKING');
 export const GET_HOUR = asyncActionType('GET_HOUR');
-export const GET_QUERY = asyncActionType('GET_QUERY');
+export const GET_DATE_RANGE = asyncActionType('GET_DATE_RANGE');

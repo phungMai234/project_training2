@@ -13,32 +13,31 @@ import 'react-dates/lib/css/_datepicker.css';
 import {DateRangePicker} from 'react-dates';
 import {START_DATE, END_DATE} from "react-dates/constants";
 import {connect} from "react-redux";
-import {getQuery} from "./actions/query";
+import {getDateRange} from "./actions/dateRange";
 
 function App(props) {
 
-  const [startDate, setStartDate] = useState(moment(Date.now()));
+  const [startDate, setStartDate] = useState(moment(Date.now() - 24 * 60 * 60 * 7 * 1000));
   const [endDate, setEndDate] = useState(moment(Date.now()));
-  const [change, setChange] = useState(true)
+  const [changeDateRange, setChangeDateRange] = useState(true)
   const [focus, setFocus] = useState(null);
 
   useEffect(() => {
-    const updateQuery = () => {
-      let query = {
-        startDate: startDate.format("YYYY/MM/DD"),
-        endDate: endDate.format("YYYY/MM/DD")
+    const updateDateRange = () => {
+      let dateRange = {
+        startDate: startDate ? startDate.format("YYYY-MM-DD") : null,
+        endDate: endDate ? endDate.format("YYYY-MM-DD") : null
       }
-      return props.getQuery(query);
+      return props.getDateRange(dateRange)
     }
-    updateQuery();
+    updateDateRange();
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [change]);
+  }, [changeDateRange]);
 
   return (
+
     <div className="container-analysis">
-      {
-        console.log("dem")
-      }
       <div className="header">
         <div className="row align-items-center">
           <span>Analysis</span>
@@ -54,10 +53,11 @@ function App(props) {
             onDatesChange={({startDate, endDate}) => {
               setStartDate(startDate);
               setEndDate(endDate);
-              if (startDate && endDate)
-                setChange(!change)
-
+              if (startDate && endDate && focus === "endDate") {
+                setChangeDateRange(!changeDateRange)
+              }
             }} // PropTypes.func.isRequired,
+            minimumNights={0}
             focusedInput={focus} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
             onFocusChange={focusedInput => setFocus(focusedInput)} // PropTypes.func.isRequired,
           />
@@ -84,7 +84,7 @@ function App(props) {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  getQuery: (query) => dispatch(getQuery(query))
+  getDateRange: (dateRange) => dispatch(getDateRange(dateRange))
 });
 
 export default connect(null, mapDispatchToProps)(App);
