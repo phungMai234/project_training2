@@ -16,12 +16,20 @@ import {connect} from "react-redux";
 import {getDateRange} from "./actions/dateRange";
 
 function App(props) {
-
+  const defaultDate = moment(Date.now());
   const [startDate, setStartDate] = useState(moment(Date.now() - 24 * 60 * 60 * 7 * 1000));
-  const [endDate, setEndDate] = useState(moment(Date.now()));
+  const [endDate, setEndDate] = useState(defaultDate);
   const [changeDateRange, setChangeDateRange] = useState(true)
   const [focus, setFocus] = useState(null);
 
+  const handleDateRangeSelection = ({startDate, endDate}) => {
+
+    setStartDate(startDate ? startDate : defaultDate);
+    setEndDate(endDate ? endDate : startDate ? startDate : defaultDate);
+
+    if (startDate && endDate)
+      setChangeDateRange(!changeDateRange);
+  }
   useEffect(() => {
     const updateDateRange = () => {
       let dateRange = {
@@ -50,16 +58,13 @@ function App(props) {
             startDateId={START_DATE} // PropTypes.string.isRequired,
             endDate={endDate} // momentPropTypes.momentObj or null,
             endDateId={END_DATE} // PropTypes.string.isRequired,
-            onDatesChange={({startDate, endDate}) => {
-              setStartDate(startDate);
-              setEndDate(endDate);
-              if (startDate && endDate && focus === "endDate") {
-                setChangeDateRange(!changeDateRange)
-              }
-            }} // PropTypes.func.isRequired,
+            onDatesChange={handleDateRangeSelection}// PropTypes.func.isRequired,
             minimumNights={0}
             focusedInput={focus} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
             onFocusChange={focusedInput => setFocus(focusedInput)} // PropTypes.func.isRequired,
+            isOutsideRange={() => false}
+            displayFormat="DD/MM/YYYY"
+            inputIconPosition="after"
           />
         </div>
       </div>
