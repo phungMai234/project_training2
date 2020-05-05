@@ -1,14 +1,16 @@
-.progress-heatmap{
-    background-image: linear-gradient(to right,#ffffff, #9c33ff);
+.progress-heatmap {
+    background-image: linear-gradient(to right, #ffffff, #9c33ff);
     height: 10px;
     width: 460px;
 }
-.number-progress{
+
+.number-progress {
     width: 460px;
     display: flex;
     justify-content: space-between;
 }
-.number-progress div{
+
+.number-progress div {
     padding: 0;
     font-size: 14px;
 }

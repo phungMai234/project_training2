@@ -12,12 +12,11 @@ const getHourError = (message) => ({
   type: GET_HOUR.ERROR,
   message: message
 })
-export const getHour = () => {
+export const getHour = (dateRange) => {
   return dispatch => {
     dispatch(getHourRequest());
-    return axios.get("http://localhost:3001/request/device_hour")
+    return axios.get(`http://localhost:3001/request/device_hour?startDate=${dateRange.startDate}&endDate=${dateRange.endDate}`)
       .then(res => {
-        console.log("res", res)
         return dispatch(getHourSuccess(res.data))
       })
       .catch(err => dispatch(getHourError(err.message)));

@@ -11,6 +11,12 @@ describe('Ranking Chart Component', () => {
   let component;
   beforeEach(() => {
     store = mockStore({
+      query: {
+        data: {
+          startDate: "2019/04/29",
+          endDate: "2019/04/29"
+        }
+      },
       rankings: {
         data: [20, 4, 5, 7, 2, 4, 8],
         isFetching: false

@@ -11,15 +11,15 @@ function DeviceType(props) {
   let iOS = props.types.iOS;
   let android = props.types.android;
   let isFetching = props.isFetching;
+  let dateRange = props.dateRange;
 
   useEffect(() => {
     const fetchData = () => {
-      return props.getTypes();
+      return props.getTypes(dateRange);
     }
     fetchData();
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [dateRange]);
 
   return (
     <div className="device-type">
@@ -68,13 +68,16 @@ function DeviceType(props) {
 
 }
 
-const mapStateToProps = (state) => ({
-  types: state.types.data,
-  isFetching: state.types.isFetching
-})
+const mapStateToProps = (state) => {
+  return {
+    types: state.types.data,
+    isFetching: state.types.isFetching,
+    dateRange: state.dateRange.data
+  }
+}
 
 const mapDispatchToProps = dispatch => ({
-  getTypes: () => dispatch(getTypes())
+  getTypes: (dateRange) => dispatch(getTypes(dateRange))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(DeviceType);

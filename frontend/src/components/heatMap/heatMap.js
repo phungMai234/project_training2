@@ -85,4 +85,4 @@ function HeatMap(props) {
 const mapStateToProps = state => ({
   hour: state.hour.data
 })
-export default connect(mapStateToProps)(HeatMap);
+export default connect(mapStateToProps, null)(HeatMap);

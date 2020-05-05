@@ -8,15 +8,16 @@ import {Spinner} from "../spinner/spinner";
 function RankingChart(props) {
   let listLevel = props.rankings;
   let isFetching = props.isFetching;
+  let dateRange = props.dateRange;
 
   useEffect(() => {
     const fetchData = () => {
-      return props.getRanking();
+      return props.getRanking(dateRange);
     }
     fetchData();
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [dateRange]);
   return (
     <div className="ranking">
       <label className="text-secondary">Ranking</label>
@@ -36,11 +37,12 @@ function RankingChart(props) {
 
 const mapStateToProps = (state) => ({
   rankings: state.rankings.data,
-  isFetching: state.rankings.isFetching
+  isFetching: state.rankings.isFetching,
+  dateRange: state.dateRange.data
 })
 
 const mapDispatchToProps = dispatch => ({
-  getRanking: () => dispatch(getRanking())
+  getRanking: (dateRange) => dispatch(getRanking(dateRange))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(RankingChart);
