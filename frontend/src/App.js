@@ -17,7 +17,7 @@ import {getDateRange} from "./actions/dateRange";
 
 function App(props) {
   const defaultDate = moment(Date.now());
-  const [startDate, setStartDate] = useState(moment(Date.now() - 24 * 60 * 60 * 7 * 1000));
+  const [startDate, setStartDate] = useState(moment().subtract(7, 'days'));
   const [endDate, setEndDate] = useState(defaultDate);
   const [changeDateRange, setChangeDateRange] = useState(true)
   const [focus, setFocus] = useState(null);
