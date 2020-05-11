@@ -14,8 +14,11 @@ app.use(BodyParser.json());
 app.use(BodyParser.urlencoded({extended: true}));
 app.use(cors())
 
-app.get('/request/device_summary', (req, res) => {
+app.get('/request/device_summary/', (req, res) => {
+
   let {startDate, endDate} = req.query;
+  let arr = req.query.arrayOS.split(',');
+
   if (!startDate || !endDate) {
     return res.status(400).send(send({
       success: "fail",
@@ -24,12 +27,14 @@ app.get('/request/device_summary', (req, res) => {
   }
   setTimeout(
     () => {
-      let n1 = _.random(0, 100);
-      let n2 = 100 - n1;
-      res.status(200).send({
-        iOS: n1,
-        android: n2
-      })
+      res.status(200).send(
+        {
+          success: "true",
+          data: _.map(arr, os => ({
+            x: os,
+            y: _.random(0, 100)
+          }))
+        })
     }, 2000)
 });
 app.get("/request/ranking", (req, res) => {
@@ -54,6 +59,7 @@ app.get("/request/ranking", (req, res) => {
 })
 app.get("/request/device_hour", (req, res) => {
   let {startDate, endDate} = req.query;
+
   if (!startDate || !endDate)
     return res.status(400).send(send({
       success: "fail",
