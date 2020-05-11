@@ -14,7 +14,6 @@ import {DateRangePicker} from 'react-dates';
 import {START_DATE, END_DATE} from "react-dates/constants";
 import {connect} from "react-redux";
 import {getDateRange} from "./actions/dateRange";
-import {getArraySelectedOS} from "./actions/arraySelectedOS"
 
 
 function App(props) {
@@ -96,7 +95,6 @@ function App(props) {
 
 const mapDispatchToProps = (dispatch) => ({
   getDateRange: (dateRange) => dispatch(getDateRange(dateRange)),
-  getArraySelectedOS: (arrayOS) => dispatch(getArraySelectedOS(arrayOS))
 });
 
 export default connect(null, mapDispatchToProps)(App);

@@ -20,9 +20,7 @@ function MultiSelectBar(props) {
 
   useEffect(() => {
     setSelectedPrev(selected);
-    let listNameOSSelected = _.map(selected, e => {
-      return e.value;
-    })
+    let listNameOSSelected = _.map(selected, e => e.value)
     return props.getArraySelectedOS(listNameOSSelected);
     // eslint-disable-next-line
   }, [change]);
