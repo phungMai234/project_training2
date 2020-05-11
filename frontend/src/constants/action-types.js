@@ -10,3 +10,4 @@ export const GET_TYPES = asyncActionType('GET_TYPES');
 export const GET_RANKING = asyncActionType('GET_RANKING');
 export const GET_HOUR = asyncActionType('GET_HOUR');
 export const GET_DATE_RANGE = asyncActionType('GET_DATE_RANGE');
+export const GET_ARRAY_SELECTED_OS = asyncActionType('GET_ARRAY_SELECTED_OS');

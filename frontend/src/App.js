@@ -14,13 +14,17 @@ import {DateRangePicker} from 'react-dates';
 import {START_DATE, END_DATE} from "react-dates/constants";
 import {connect} from "react-redux";
 import {getDateRange} from "./actions/dateRange";
+import {getArraySelectedOS} from "./actions/arraySelectedOS"
+
 
 function App(props) {
+
   const defaultDate = moment(Date.now());
   const [startDate, setStartDate] = useState(moment().subtract(7, 'days'));
   const [endDate, setEndDate] = useState(defaultDate);
   const [changeDateRange, setChangeDateRange] = useState(true)
   const [focus, setFocus] = useState(null);
+
 
   const handleDateRangeSelection = ({startDate, endDate}) => {
 
@@ -46,34 +50,36 @@ function App(props) {
   return (
 
     <div className="container-analysis">
-      <div className="header">
-        <div className="row align-items-center">
-          <span>Analysis</span>
-          <span className="text-secondary ml-4">Device List</span>
-        </div>
-        <div className="row align-items-center">
-          <label className="font-1 mr-3">Range</label>
-          <DateRangePicker
-            startDate={startDate} // momentPropTypes.momentObj or null,
-            startDateId={START_DATE} // PropTypes.string.isRequired,
-            endDate={endDate} // momentPropTypes.momentObj or null,
-            endDateId={END_DATE} // PropTypes.string.isRequired,
-            onDatesChange={handleDateRangeSelection}// PropTypes.func.isRequired,
-            minimumNights={0}
-            focusedInput={focus} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
-            onFocusChange={focusedInput => setFocus(focusedInput)} // PropTypes.func.isRequired,
-            isOutsideRange={() => false}
-            displayFormat="DD/MM/YYYY"
-            inputIconPosition="after"
-          />
+      <div className="header d-flex justify-content-between align-items-center m-2">
+        <div>
+          <div className="align-items-center">
+            <span>Analysis</span>
+            <span className="text-secondary ml-4">Device List</span>
+          </div>
+          <div className="align-items-center">
+            <label className="font-1 mr-3">Range</label>
+            <DateRangePicker
+              startDate={startDate} // momentPropTypes.momentObj or null,
+              startDateId={START_DATE} // PropTypes.string.isRequired,
+              endDate={endDate} // momentPropTypes.momentObj or null,
+              endDateId={END_DATE} // PropTypes.string.isRequired,
+              onDatesChange={handleDateRangeSelection}// PropTypes.func.isRequired,
+              minimumNights={0}
+              focusedInput={focus} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
+              onFocusChange={focusedInput => setFocus(focusedInput)} // PropTypes.func.isRequired,
+              isOutsideRange={() => false}
+              displayFormat="DD/MM/YYYY"
+              inputIconPosition="after"
+            />
+          </div>
         </div>
       </div>
       <div className="body">
         <div className="row">
-          <div className="col-sm-3 box">
+          <div className="col-sm-4 box">
             <DeviceType/>
           </div>
-          <div className="col-sm-8 box">Device</div>
+          <div className="col-sm-7 box">Device</div>
         </div>
         <div className="row">
           <div className="col-sm-3 box">
@@ -89,7 +95,8 @@ function App(props) {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  getDateRange: (dateRange) => dispatch(getDateRange(dateRange))
+  getDateRange: (dateRange) => dispatch(getDateRange(dateRange)),
+  getArraySelectedOS: (arrayOS) => dispatch(getArraySelectedOS(arrayOS))
 });
 
 export default connect(null, mapDispatchToProps)(App);

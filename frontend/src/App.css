@@ -6,13 +6,10 @@
 
 .header {
     background-color: #ffff;
-    min-height: 10vh;
     position: absolute;
     left: 0;
     right: 0;
     top: 0;
-    margin-left: 30px;
-    box-shadow: 0 1px 2px #0000;
 }
 
 .header-item label {

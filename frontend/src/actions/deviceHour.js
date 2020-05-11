@@ -15,7 +15,7 @@ const getHourError = (message) => ({
 export const getHour = (dateRange) => {
   return dispatch => {
     dispatch(getHourRequest());
-    return axios.get(`http://localhost:3001/request/device_hour?startDate=${dateRange.startDate}&endDate=${dateRange.endDate}`)
+    return axios.get(`http://localhost:3002/request/device_hour?startDate=${dateRange.startDate}&endDate=${dateRange.endDate}`)
       .then(res => {
         return dispatch(getHourSuccess(res.data))
       })
