@@ -14,12 +14,14 @@ import {DateRangePicker} from 'react-dates';
 import {START_DATE, END_DATE} from "react-dates/constants";
 import {connect} from "react-redux";
 import {getDateRange} from "./actions/dateRange";
+import LineChart from "./components/lineChart/lineChart";
+import MultiSelectBar from "./components/multiSelectBar/multiSelectBar";
 
 
 function App(props) {
 
   const defaultDate = moment(Date.now());
-  const [startDate, setStartDate] = useState(moment().subtract(7, 'days'));
+  const [startDate, setStartDate] = useState(moment().subtract(1, 'months'));
   const [endDate, setEndDate] = useState(defaultDate);
   const [changeDateRange, setChangeDateRange] = useState(true)
   const [focus, setFocus] = useState(null);
@@ -72,13 +74,16 @@ function App(props) {
             />
           </div>
         </div>
+        <div className="align-items-center">
+          <MultiSelectBar/>
+        </div>
       </div>
       <div className="body">
         <div className="row">
           <div className="col-sm-4 box">
             <DeviceType/>
           </div>
-          <div className="col-sm-7 box">Device</div>
+          <div className="col-sm-7 box"><LineChart/></div>
         </div>
         <div className="row">
           <div className="col-sm-3 box">

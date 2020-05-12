@@ -5,7 +5,6 @@ import {VictoryPie} from "victory"
 import {getTypes} from "../../actions/deviceType";
 import {Spinner} from "../spinner/spinner";
 import _ from "lodash"
-import MultiSelectBar from "../multiSelectBar/multiSelectBar"
 
 
 function DeviceType(props) {
@@ -22,7 +21,6 @@ function DeviceType(props) {
     y: e.y,
     bgColor: colorRange[index]
   }))
-
   useEffect(() => {
     const fetchData = () => {
       return props.getTypes(dateRange, selectedOS);
@@ -35,7 +33,6 @@ function DeviceType(props) {
     <div className="device-type">
       <div className="d-flex justify-content-between align-items-center">
         <label className="text-secondary">Devive Type</label>
-        <MultiSelectBar/>
       </div>
 
       {

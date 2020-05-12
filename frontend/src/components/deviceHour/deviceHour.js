@@ -17,6 +17,7 @@ function DeviceHour(props) {
     fetchData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dateRange]);
+
   return (<div className="device-hour">
     <label className="text-secondary">Device by hour</label>
     {

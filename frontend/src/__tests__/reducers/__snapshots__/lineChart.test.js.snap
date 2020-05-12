@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`line chart reducer should get device types to empty list 1`] = `
+Object {
+  "data": Array [],
+  "isFetching": false,
+}
+`;

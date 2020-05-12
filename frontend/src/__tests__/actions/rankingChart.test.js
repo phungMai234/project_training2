@@ -11,7 +11,7 @@ describe("ranking chart actions", () => {
   let endDate = moment(Date.now()).format("YYYY/MM/DD");
 
   it("should create an action to get levels", async () => {
-    const res = await axios.get(`http://localhost:3001/request/ranking?startDate=${startDate}&endDate=${endDate}`);
+    const res = await axios.get(`http://localhost:3002/request/ranking?startDate=${startDate}&endDate=${endDate}`);
     expect(res.status).toEqual(200);
   })
 })

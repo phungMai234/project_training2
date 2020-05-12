@@ -1,0 +1,28 @@
+.line-chart {
+    padding: 20px 0px;
+}
+
+.type-date-custom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.type-date-custom button {
+    padding: 0px 5px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    background-color: #ffffff;
+}
+
+.badge-custom {
+    transform: rotate(90deg);
+    width: 10px;
+    height: 5px;
+    margin: 5px 5px;
+}
+
+.type-date-custom .item {
+    display: inline-grid;
+}
