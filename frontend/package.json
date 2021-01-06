@@ -6,7 +6,7 @@
     "@fortawesome/fontawesome-free": "^5.13.0",
     "@kenshooui/react-multi-select": "^1.1.6",
     "apexcharts": "^3.18.1",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "axios-mock-adapter": "^1.18.1",
     "bootstrap": "^4.4.1",
     "highcharts": "^8.0.4",
